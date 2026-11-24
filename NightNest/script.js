@@ -61,12 +61,6 @@ if (editRoutineButton) {
   });
 }
 
-document.querySelectorAll("[data-plan]").forEach((button) => {
-  button.addEventListener("click", () => {
-    showToast(`${button.dataset.plan} is a sample plan. Subscriptions aren't connected in this prototype.`);
-  });
-});
-
 document.querySelectorAll(".side-link").forEach((link) => {
   link.addEventListener("click", () => {
     document.querySelectorAll(".side-link").forEach((item) => item.classList.toggle("active", item === link));

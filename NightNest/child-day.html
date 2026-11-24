@@ -1,0 +1,202 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Set up your child's app locker, sleep schedule, and bedtime settings.">
+    <meta name="theme-color" content="#f7f6fb">
+    <title>App locker — NightNest</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="sidebar">
+        <a class="brand" href="index.html" aria-label="NightNest home">
+          <span class="brand-icon" aria-hidden="true">☾</span>
+          <span>nightnest<span class="brand-period">.</span><small>FAMILY SLEEP, MADE SIMPLE</small></span>
+        </a>
+        <div class="family-switcher">
+          <span class="family-avatar" aria-hidden="true">M</span>
+          <span class="family-name"><strong>The Miller family</strong><small>Parent account</small></span>
+          <span class="switcher-arrow" aria-hidden="true">⌄</span>
+        </div>
+        <p class="nav-label">YOUR SPACE</p>
+        <nav class="side-nav" aria-label="Main navigation">
+          <a class="side-link" href="index.html"><span aria-hidden="true">◫</span> Overview</a>
+          <a class="side-link" href="screen-time.html"><span aria-hidden="true">◷</span> Screen time</a>
+          <a class="side-link" href="bedtime.html"><span aria-hidden="true">☾</span> Bedtime routine</a>
+          <a class="side-link active" href="child-day.html" aria-current="page"><span aria-hidden="true">✧</span> App locker</a>
+        </nav>
+        <div class="sidebar-bottom">
+          <div class="help-card">
+            <span class="help-spark" aria-hidden="true">✳</span>
+            <strong>Small steps count.</strong>
+            <p>Set up the details that make <span id="profile-help-name">Oliver's</span> routine fit your family.</p>
+            <a href="bedtime.html">Open bedtime routine <span aria-hidden="true">→</span></a>
+          </div>
+          <div class="account-row">
+            <span class="parent-avatar" aria-hidden="true">AM</span>
+            <span><strong>Alex Miller</strong><small>Parent account</small></span>
+            <button class="more-button" type="button" aria-label="More account options">···</button>
+          </div>
+        </div>
+      </aside>
+
+      <main class="main-content" id="top">
+        <header class="topbar">
+          <div class="breadcrumbs"><a href="index.html">Family space</a><span aria-hidden="true">/</span><strong>App locker</strong></div>
+          <div class="topbar-actions">
+            <span class="today-label"><span class="online-dot"></span> Tuesday, October 20</span>
+            <button class="icon-button notification-button" type="button" aria-label="Notifications">♧<span class="notification-dot"></span></button>
+          </div>
+        </header>
+
+        <section class="child-profile-heading">
+          <div>
+            <p class="eyebrow">CHILD &amp; FAMILY SETTINGS</p>
+            <h1>Set up <span id="profile-name-display">Oliver's</span><br><em>app locker.</em></h1>
+            <p class="welcome-copy">Manage the schedule and device settings that support your child's app limits and bedtime locks.</p>
+          </div>
+          <span class="profile-hero-avatar" id="profile-avatar-initial" aria-hidden="true">O</span>
+        </section>
+
+        <div class="profile-settings-grid">
+          <div class="profile-settings-main">
+            <section class="panel profile-details-panel">
+              <div class="panel-heading">
+                <div><p class="eyebrow">APP LOCKER SETTINGS</p><h2>About <span id="profile-about-name">Oliver</span></h2></div>
+                <span class="profile-status"><i></i> Parent managed</span>
+              </div>
+              <form id="profile-form">
+                <div class="profile-form-fields">
+                  <div class="field">
+                    <label for="child-name">Child's name</label>
+                    <select id="child-name" name="name">
+                      <option value="oliver" selected>Oliver</option>
+                      <option value="sam">Sam</option>
+                    </select>
+                  </div>
+                  <div class="field">
+                    <label for="child-age">Age in years</label>
+                    <select id="child-age" name="age" required>
+                      <option value="1">1</option><option value="2">2</option><option value="3">3</option>
+                      <option value="4">4</option><option value="5">5</option><option value="6">6</option>
+                      <option value="7">7</option><option value="8">8</option><option value="9" selected>9</option>
+                      <option value="10">10</option><option value="11">11</option><option value="12">12</option>
+                      <option value="13">13</option><option value="14">14</option><option value="15">15</option>
+                      <option value="16">16</option><option value="17">17</option><option value="18">18</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="profile-child-actions">
+                  <button class="button button-light" id="show-add-child" type="button" aria-controls="add-child-panel" aria-expanded="false">+ Add another child</button>
+                  <button class="button button-danger" id="delete-child" type="button" title="At least one child profile must remain">Delete selected child</button>
+                </div>
+                <div class="add-child-panel" id="add-child-panel" hidden>
+                  <p>Add a name and age to create another child profile in this preview.</p>
+                  <div class="profile-form-fields">
+                    <div class="field">
+                      <label for="new-child-name">Child's name</label>
+                      <input id="new-child-name" type="text" autocomplete="off">
+                    </div>
+                    <div class="field">
+                      <label for="new-child-age">Age in years</label>
+                      <input id="new-child-age" type="number" min="1" max="18" value="9">
+                    </div>
+                  </div>
+                  <div class="add-child-actions">
+                    <button class="button button-primary" id="add-child-submit" type="button">Add child</button>
+                    <button class="button button-light" id="cancel-add-child" type="button">Cancel</button>
+                  </div>
+                </div>
+                <div class="profile-save-row">
+                  <button class="button button-primary" type="submit">Update preview</button>
+                  <span>Profile changes aren't saved in this prototype.</span>
+                </div>
+                <div class="age-sleep-guidance" aria-live="polite">
+                  <span class="guidance-moon" aria-hidden="true">☾</span>
+                  <span><small>GENERAL SLEEP GUIDANCE</small><strong id="recommended-sleep-range">A 9-year-old generally needs 9–12 hours of sleep per 24 hours.</strong></span>
+                </div>
+              </form>
+            </section>
+
+            <section class="panel profile-schedule-panel">
+              <div class="panel-heading">
+                <div><p class="eyebrow">SLEEP SCHEDULE</p><h2>Set <span id="profile-schedule-name">Oliver's</span> usual times</h2></div>
+                <span class="schedule-spark" aria-hidden="true">☾</span>
+              </div>
+              <p class="routine-intro">Choose the usual bedtime and wake-up time for the nights this schedule runs.</p>
+              <form id="schedule-form">
+                <div class="schedule-time-fields">
+                  <div class="field">
+                    <label for="bedtime-time">Bedtime</label>
+                    <input id="bedtime-time" name="bedtime" type="time" value="20:00" required>
+                  </div>
+                  <span class="schedule-arrow" aria-hidden="true">→</span>
+                  <div class="field">
+                    <label for="wake-time">Wake-up</label>
+                    <input id="wake-time" name="wakeTime" type="time" value="07:00" required>
+                  </div>
+                </div>
+                <div class="sleep-window-note"><span aria-hidden="true">◷</span> Scheduled sleep window: <strong id="sleep-window-duration">11 hours</strong></div>
+                <p class="sleep-window-assessment" id="sleep-window-assessment" aria-live="polite">Within the general sleep range for this age.</p>
+                <p class="sleep-window-disclaimer">This is time scheduled for sleep, not a measure of how much your child actually sleeps. Individual needs vary.</p>
+                <fieldset class="profile-days">
+                  <legend>Apply this schedule on</legend>
+                  <label><input type="checkbox" checked><span>Mon</span></label>
+                  <label><input type="checkbox" checked><span>Tue</span></label>
+                  <label><input type="checkbox" checked><span>Wed</span></label>
+                  <label><input type="checkbox" checked><span>Thu</span></label>
+                  <label><input type="checkbox" checked><span>Fri</span></label>
+                  <label><input type="checkbox"><span>Sat</span></label>
+                  <label><input type="checkbox"><span>Sun</span></label>
+                </fieldset>
+                <div class="profile-save-row">
+                  <button class="button button-primary" type="submit">Update schedule preview</button>
+                  <span>Schedule changes aren't saved in this prototype.</span>
+                </div>
+              </form>
+            </section>
+          </div>
+
+          <aside class="profile-settings-side">
+            <section class="panel family-usage-panel" aria-labelledby="family-usage-title">
+              <div class="panel-heading">
+                <div><p class="eyebrow">FAMILY SNAPSHOT</p><h2 id="family-usage-title">Screen time today</h2></div>
+                <span class="family-usage-period">TODAY</span>
+              </div>
+              <p class="family-usage-intro">Compare screen time across your children's profiles.</p>
+              <div class="family-usage-list" id="family-usage-list" role="list" aria-label="Screen time today by child"></div>
+              <p class="family-usage-winner" id="family-usage-winner" aria-live="polite"></p>
+              <p class="family-usage-note">Sample preview data. Live screen-time reports need a connected device.</p>
+            </section>
+            <section class="device-setup-panel">
+              <div class="device-card-top">
+                <span class="device-card-icon" aria-hidden="true">▣</span>
+                <span class="device-status"><i></i> NOT CONNECTED</span>
+              </div>
+              <h2><span id="profile-device-name">Oliver's</span> device</h2>
+              <p>Connect a child's phone in the full app to apply screen-time limits and bedtime settings. Device pairing isn't available in this preview.</p>
+              <button class="button device-setup-button" type="button" id="device-setup">Set up a device</button>
+            </section>
+
+            <section class="panel profile-shortcuts">
+              <p class="eyebrow">QUICK SETTINGS</p>
+              <h2>Keep things in rhythm.</h2>
+              <a href="bedtime.html"><span aria-hidden="true">☾</span> Edit bedtime routine <span aria-hidden="true">→</span></a>
+              <a href="screen-time.html#app-limits"><span aria-hidden="true">▣</span> Choose bedtime apps <span aria-hidden="true">→</span></a>
+              <a href="screen-time.html"><span aria-hidden="true">◷</span> Review screen time <span aria-hidden="true">→</span></a>
+            </section>
+          </aside>
+        </div>
+
+        <footer class="footer"><span>© 2026 NightNest</span><span>Made for more goodnights, together. <span aria-hidden="true">☾</span></span><a href="#top">Back to top ↑</a></footer>
+      </main>
+    </div>
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+    <script src="child-profile.js"></script>
+  </body>
+</html>

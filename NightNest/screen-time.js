@@ -31,7 +31,7 @@ appRows.forEach((row) => {
       const selectedTotal = appRows.filter((item) => item.querySelector("input").checked).length;
       if (selectedTotal > freePlanLimit) {
         event.currentTarget.checked = false;
-        showToast("The Free plan supports bedtime locks for up to 10 apps.");
+        showToast("Bedtime lock supports up to 10 selected apps in this prototype.");
       }
     }
     updateAppSelection();
